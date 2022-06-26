@@ -1,4 +1,4 @@
-const Todo = require('./../models/todomodel');
+const Todo = require('./../models/todoModel');
 const Customer = require('./../models/customerModel');
 
 function formatCreatedTimestamp(todo) {
