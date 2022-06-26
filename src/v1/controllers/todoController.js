@@ -109,8 +109,7 @@ exports.getTodo = async (req, res) => {
 
 exports.createTodo = async (req, res) => {
   try {
-
-req.body.status = "Open"
+    req.body.status = 'Open';
 
     const newTodo = await Todo.create(req.body);
 
@@ -138,7 +137,7 @@ exports.updateTodo = async (req, res) => {
     });
 
     res.render('showSingleTodo', {
-      layout: 'Main',
+      layout: 'main',
       title: todo.title,
       customer: todo.customer,
       description: todo.description,
@@ -172,11 +171,11 @@ exports.deleteTodo = async (req, res) => {
 };
 
 exports.createTodoTemplate = async (req, res) => {
-  console.log('STARTING')
+  console.log('STARTING');
   try {
-const customersArray = await Customer.find();
+    const customersArray = await Customer.find();
 
-console.log(customersArray);
+    console.log(customersArray);
 
     res.render('createEditTodo', {
       layout: 'createEditMain',
