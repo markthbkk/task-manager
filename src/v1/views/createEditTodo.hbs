@@ -1,0 +1,49 @@
+<div id='add-todo-page'>
+  <div class='top-row'><div class='home'>
+      <a href='/api/v1/todos' style='font-size: 1.5em; color: black'><i
+          class='fa-solid fa-house'
+        ></i></a>
+    </div>
+
+    <div class='current-title'>{{documentTitle}}</div></div>
+
+  <form id='add-todo-form' method='post'>
+    <div class='todo-form-field'>
+      <div class='form-field-label'>
+        <label for='item-title'>Title</label>
+      </div>
+      <div class='form-field-text-input'>
+        <input type='text' id='item-title' name='title' value='' />
+      </div>
+    </div>
+    <div id='customer-form-field' class='form-field'>
+      <div class='form-field-label'>
+        <label for='customer-select'>Customer</label>
+      </div>
+      <div class='form-field-select'>
+        <select id='customer-select' name='customer' class='customer-select'>
+          {{#each customers}}
+            <option>{{this.customer}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class='textarea'>
+      <div class='text-area-label'>
+        <p>Item details</p>
+      </div>
+      <div class='text-area-edit-box'>
+        <textarea
+          id='item-details'
+          name='description'
+          form='add-todo-form'
+        >{{description}}</textarea>
+      </div>
+    </div>
+    <div class='form-submit-button'>
+      <input type='submit' value='Submit' />
+    </div>
+  </form>
+</div>
+
+<script src='/scripts/createEditTodo.js'></script>

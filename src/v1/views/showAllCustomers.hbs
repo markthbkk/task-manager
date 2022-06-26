@@ -1,0 +1,16 @@
+<div id='all-customers-page'>
+  
+
+  {{#each displayItems}}
+
+  <div class='customer-display'>
+        
+      <div class='customer-caption'>{{this.customer}}</div>
+      <div class='document-id'>{{this._id}}</div>
+      <div class='delete'><button class='item-ctrl-btn delete-btn'>Delete</button></div>
+      
+  </div>
+
+{{/each}}
+
+<script src='/scripts/showAllCustomers.js'></script>

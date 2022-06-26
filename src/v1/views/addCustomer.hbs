@@ -1,0 +1,22 @@
+<div id='add-customer-page'>
+  <form id='add-customer-form' method='post' action='/api/v1/todos/customers'>
+    <div class='customer-form-field'>
+      <div class='form-field-label'>
+        <label for='customer'>Customer</label>
+      </div>
+      <div class='form-field-text-input'>
+        <input type='text' id='customer' name='customer' />
+      </div>
+    </div>
+
+    <div class='form-submit-button'>
+      <input type='submit' value='Submit' />
+    </div>
+  </form>
+</div>
+
+<div id='all-customer-control'>
+  <button class='all-customers-btn'>All Customers</button>
+</div>
+
+<script src='/scripts/addCustomer.js'></script>

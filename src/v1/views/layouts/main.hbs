@@ -1,0 +1,50 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' type='text/css' href='/css/style.css' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Courgette&display=swap'
+      rel='stylesheet'
+    />
+    <script
+      src='https://kit.fontawesome.com/74ecf40670.js'
+      crossorigin='anonymous'
+    ></script>
+
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <nav><span>Task Manager</span></nav>
+    <div id='controls-area'>
+      <div class='home'>
+        <a href='/api/v1/todos' style='font-size: 1.5em; color: white'><i
+            class='fa-solid fa-house'
+          ></i></a>
+      </div>
+      <div class='display-filter-caption'><p>Status:</p></div>
+      <div id='display-filter-control'>
+        <select class='display-select'>
+          <option>All</option>
+          <option>Open</option>
+          <option>Closed</option>
+          <option>Completed</option>
+        </select>
+      </div>
+      <div id='add-customer-control'>
+        <button class='ctrl-btn customers-btn'>Customers</button>
+      </div>
+      <div id='add-todo-control'>
+        <button class='ctrl-btn add-todo-btn'>Add ToDo</button>
+      </div>
+    </div>
+
+    <div class='liveData'>
+      {{{body}}}
+    </div>
+
+  </body>
+</html>

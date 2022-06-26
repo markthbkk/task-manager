@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  width: min(100vw, 1000px);
+  height: 12vh;
+  line-height: 12vh;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-family: 'Courgette', cursive;
+  font-size: min(7.5vw, 2.5rem);
+  font-weight: 200;
+  text-align: center;
+  letter-spacing: 12px;
+  margin-bottom: 2vh;
+}
+
+.top-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2.5vh;
+}
+
+.current-title {
+  margin-right: 30%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: min(4.5vw, 2rem);
+  font-weight: 400;
+  color: white;
+}
+.home {
+  font-size: 2.5vh;
+  margin-bottom: 2vh;
+}
+
+#add-todo-page {
+  margin-top: 3vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: min(2.5vw, 1.3rem);
+  font-weight: 400;
+  color: black;
+  margin-inline: auto;
+  width: min(95vw, 950px);
+  height: min(100%, 50rem);
+  background-color: rgb(173, 192, 173);
+  padding: 2rem;
+}
+
+#item-title {
+  border: 1px solid black;
+  padding: 0.4rem;
+  width: max(50%, 15rem);
+  height: 4vh;
+}
+
+.form-field label {
+  /* display: inline-block; */
+  width: 10rem;
+}
+
+.form-field input {
+  margin: 1rem;
+  width: 60%;
+  height: 2rem;
+}
+
+.todo-form-field {
+  display: flex;
+  margin-bottom: 3vh;
+}
+
+.form-field-label {
+  width: 25vw;
+  height: 4vh;
+  line-height: 4vh;
+}
+
+.form-field-text-input {
+  width: 75vw;
+}
+
+.form-field-text-input input {
+  height: 4vh;
+  width: 100%;
+}
+
+.form-submit-button {
+  margin-top: 2vh;
+}
+
+.form-submit-button {
+  margin-top: 1vh;
+  width: 40%;
+  height: max(1.6rem, 3vh);
+  padding-inline: auto;
+  margin-inline: auto;
+}
+
+.form-submit-button input:hover {
+  background-color: darkgreen;
+  cursor: pointer;
+}
+.form-submit-button input {
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  border: 0px;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: min(2.5vw, 1.3rem);
+  font-weight: 500;
+}
+
+#customer-form-field {
+  display: flex;
+  margin-bottom: 3vh;
+  justify-content: space-between;
+}
+
+.form-field-select {
+  width: 75vw;
+}
+
+.form-field-select option {
+  margin-inline: auto;
+}
+
+.customer-select {
+  /* margin-left: 1rem; */
+  height: 4vh;
+  line-height: 4vh;
+  width: 50%;
+  border: 1px solid black;
+  background-color: white;
+  padding-inline: 0.3rem;
+}
+
+.textarea {
+  display: flex;
+  margin-bottom: 3vh;
+  justify-content: flex-start;
+}
+
+.text-area-label {
+  margin-top: 2.5vh;
+  width: 25%;
+}
+
+.text-area-edit-box textarea {
+  height: 250px;
+  width: min(630px, 55vw);
+  border: 1px solid black;
+  padding: 0.6rem;
+}

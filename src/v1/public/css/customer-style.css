@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  width: min(100vw, 1000px);
+  height: 12vh;
+  line-height: 12vh;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-family: 'Courgette', cursive;
+  font-size: min(4.5vw, 2.5rem);
+  font-weight: 200;
+  text-align: center;
+  letter-spacing: 0.6vw;
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav span {
+  width: 55%;
+}
+
+.home {
+  font-size: 2.5vh;
+  padding: 4vh 0 0 4vh;
+}
+
+.customer-display {
+  margin-top: 1vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: min(2.5vw, 1.3rem);
+  font-weight: 400;
+  color: black;
+  margin-inline: auto;
+  width: min(95vw, 950px);
+  height: min(7vh, 30rem);
+  line-height: min(7vh, 30rem);
+  background-color: rgb(173, 192, 173);
+  padding-top: 0.5vh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.customer-caption {
+  background-color: white;
+  width: 35%;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  height: min(4vh, 30rem);
+  line-height: min(4vh, 30rem);
+  margin: 1vh;
+}
+
+.document-id {
+  display: none;
+}
+
+.delete-btn {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 1vh 2vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1vh 1vh;
+  height: min(4vh, 30rem);
+  line-height: min(2vh, 30rem);
+  
+}
+
+.add-customer-btn {
+  background-color: black;
+  color: white;
+  padding: 1vh 1vh;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: max(0.8rem, 2vh);
+  margin: 3vh 1vw;
+  border: white 1px solid;
+  height: 6vh;
+}
+
+.delete-btn:hover,
+.add-customer-btn:hover {
+  background-color: rgb(95, 158, 95);
+  cursor: pointer;
+}
+
+#add-customer-page {
+  margin-top: 3vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: min(2.5vw, 1.3rem);
+  font-weight: 400;
+  color: black;
+  margin-inline: auto;
+  width: min(95vw, 950px);
+  height: min(100%, 50rem);
+  background-color: rgb(173, 192, 173);
+  padding: 2rem;
+}
+
+#item-title {
+  border: 1px solid black;
+  padding: 0.6rem;
+}
+
+.form-field label {
+  /* display: inline-block; */
+  width: 10rem;
+}
+
+.form-field input {
+  margin: 1rem;
+  width: 60%;
+  height: 2rem;
+}
+
+.customer-form-field {
+  display: flex;
+  margin-bottom: 3vh;
+}
+
+.form-field-label {
+  width: 25vw;
+  height: 4vh;
+  line-height: 4vh;
+  font-size: 2vh;
+}
+
+.form-field-text-input {
+  width: 75vw;
+}
+
+.form-field-text-input input {
+  height: 4vh;
+  width: 100%;
+}
+
+.form-submit-button {
+  margin-top: 2vh;
+}
+
+.form-submit-button {
+  margin-top: 1vh;
+  width: 40%;
+  height: max(1.6rem, 3vh);
+  padding-inline: auto;
+  margin-inline: auto;
+}
+
+.form-submit-button input:hover {
+  background-color: darkgreen;
+  cursor: pointer;
+}
+.form-submit-button input {
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  border: 0px;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: min(2.5vw, 1.3rem);
+  font-weight: 500;
+}
+
+#customer-form-field {
+  display: flex;
+  margin-bottom: 3vh;
+  justify-content: space-between;
+}
+
+.form-field-select {
+  width: 75vw;
+}
+
+.form-field-select option {
+  margin-inline: auto;
+}
+
+.customer-select {
+  /* margin-left: 1rem; */
+  height: 4vh;
+  line-height: 4vh;
+  width: 50%;
+  border: 1px solid black;
+  background-color: white;
+  padding-inline: 0.3rem;
+}
+
+.textarea {
+  display: flex;
+  margin-bottom: 3vh;
+  justify-content: flex-start;
+}
+
+.text-area-label {
+  margin-top: 2.5vh;
+  width: 25%;
+}
+
+.text-area-edit-box textarea {
+  height: 250px;
+  width: min(630px, 55vw);
+  border: 1px solid black;
+  padding: 0.6rem;
+}
+
+#all-customer-control {
+  margin-top: 4vh;
+  margin-inline: auto;
+  width: 15%;
+}
+
+.all-customers-btn {
+  /* margin-top: 1rem; */
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 4vh;
+  line-height: 4vh;
+  border: 0.2px solid black;
+  padding-inline: auto;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: min(2.5vw, 1.3rem);
+  font-weight: 400;
+  margin-inline: auto;
+}
+
+.all-customers-btn:hover {
+  background-color: rgb(95, 158, 95);
+  cursor: pointer;
+}

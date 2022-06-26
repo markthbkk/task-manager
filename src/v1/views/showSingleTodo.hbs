@@ -1,0 +1,41 @@
+{{!-- {{#each displayItem}} --}}
+
+<div class='todo-item-summary'>
+  <div class='item-controls-area-top-row'>
+    <div class='item-ctrl status-indicator item-open'></div>
+    <div class='customer-caption'>{{customer}}
+    </div>
+    <div class='title-caption'>{{title}}</div>
+  </div>
+  <div class='item-controls-area-second-row'>
+    {{! <div class='details-edit-view'>
+      <button class='item-ctrl-btn update-todo'>Update</button>
+    </div> }}
+    <div class='mark-open'><button
+        class='item-ctrl-btn open-btn'
+      >Open</button></div>
+    <div class='mark-complete'>
+      <button class='item-ctrl-btn complete-btn'>Complete</button>
+    </div>
+    <div class='mark-closed'>
+      <button class='item-ctrl-btn close-btn'>Close</button>
+    </div>
+    <div class='delete'><button
+        class='item-ctrl-btn delete-btn'
+      >Delete</button></div>
+  </div>
+
+  <div class='main-text-area-read-only'>{{description}}
+  </div>
+
+  <div class='footer-info-area'>
+    <div class='created'>Created:
+      {{created}}
+    </div>
+    <div class='document-id'>{{documentID}}</div>
+  </div>
+</div>
+
+{{!-- {{/each}} --}}
+
+<script src='/scripts/showSingleTodo.js'></script>

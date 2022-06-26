@@ -1,0 +1,31 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "To Dos app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:prod": "NODE_ENV=production node server.js"
+  },
+  "keywords": [],
+  "author": "Mark Thomas",
+  "license": "MIT",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-csp-header": "^5.1.0",
+    "express-handlebars": "^6.0.6",
+    "handlebars": "^4.7.7",
+    "json-stringify": "^1.0.0",
+    "mongoose": "^6.3.5",
+    "morgan": "^1.10.0",
+    "prettier": "^2.6.2",
+    "serve-favicon": "^2.5.0",
+    "slugify": "^1.6.5",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
