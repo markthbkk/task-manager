@@ -7,6 +7,71 @@ function formatCreatedTimestamp(todo) {
   console.log(todo.friendlyDate);
 }
 
+// function insertHREF(text) {
+//   const expression =
+//     '(https?://(?:www.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|https?://(?:www.|(?!www))[a-zA-Z0-9]+.[^s]{2,}|www.[a-zA-Z0-9]+.[^s]{2,})';
+
+//   const regex = new RegExp(expression);
+
+//   let lines = text.split('<br>');
+
+//   lines.forEach(line => {words = line.split(" ")})
+
+//   words.forEach(function (word, index) {
+//     if (word.match(regex)) {
+//       words[index] = `<a href=${word}>${word}</a>`;
+//     }
+//     console.log(words[index]);
+//   });
+
+//   newArray = tWords.join('<br>');
+
+//   return newArray;
+// }
+
+function insertHREF(text) {
+  let newLinesArray = [];
+
+  // const exp1 = "(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"
+
+  // const exp2 = /(http|https)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/
+
+  const exp3 =
+    /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+
+  let regex = new RegExp(exp3);
+
+  let lines = text.split('<br>');
+
+  lines.forEach((line) => {
+    console.log(line);
+
+    const words = line.split(' ');
+
+    words.forEach(function (word, index) {
+      // console.log(word)
+
+      if (word.match(regex)) {
+        words[
+          index
+        ] = `<a href=${word}  target="_blank" rel="noopener noreferrer">${word}</a>`;
+        console.log(`<a href=${word}>${word}</a>`);
+      }
+      // console.log(words[index]);
+    });
+
+    const newLine = words.join(' ');
+
+    console.log(newLine);
+
+    newLinesArray.push(newLine);
+  });
+
+  const newText = newLinesArray.join('<br>');
+
+  return newText;
+}
+
 exports.getAllTodos = async (req, res) => {
   console.log('Getting Requested Todos');
 
@@ -60,6 +125,17 @@ exports.getAllTodos = async (req, res) => {
       .exec();
 
     Todos.forEach(formatCreatedTimestamp);
+
+    Todos.forEach((el) => {
+      const newDesc = el.description
+        .replaceAll('\r\n\r\n', '<br>')
+        .replaceAll('\r\n', '<br>');
+      el.description = insertHREF(newDesc);
+    });
+
+    // const updatedDesc = insertHREF(newDesc);
+
+    // console.log(updatedDesc);
 
     console.log(Todos);
 
@@ -128,7 +204,7 @@ exports.createTodo = async (req, res) => {
 };
 
 exports.updateTodo = async (req, res) => {
-  // console.log(req.body);
+  console.log(req.body);
   // console.log(req.params.id);
   try {
     const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
@@ -136,11 +212,21 @@ exports.updateTodo = async (req, res) => {
       runValidators: true,
     });
 
+    const newDesc = todo.description
+      .replaceAll('\r\n\r\n', '<br>')
+      .replaceAll('\r\n', '<br>');
+
+    console.log(newDesc);
+
+    const updatedDesc = insertHREF(newDesc);
+
+    console.log(updatedDesc);
+
     res.render('showSingleTodo', {
       layout: 'main',
       title: todo.title,
       customer: todo.customer,
-      description: todo.description,
+      description: updatedDesc,
       created: new Date(todo.created).toLocaleString().replace(',', ''),
       documentID: todo._id,
     });

@@ -211,6 +211,7 @@ nav {
   width: min(85vw, 950px);
   height: 15vh;
   padding: 0.5rem;
+  overflow-y: scroll;
 }
 
 .footer-info-area {
