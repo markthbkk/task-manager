@@ -7,34 +7,8 @@ function formatCreatedTimestamp(todo) {
   console.log(todo.friendlyDate);
 }
 
-// function insertHREF(text) {
-//   const expression =
-//     '(https?://(?:www.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|https?://(?:www.|(?!www))[a-zA-Z0-9]+.[^s]{2,}|www.[a-zA-Z0-9]+.[^s]{2,})';
-
-//   const regex = new RegExp(expression);
-
-//   let lines = text.split('<br>');
-
-//   lines.forEach(line => {words = line.split(" ")})
-
-//   words.forEach(function (word, index) {
-//     if (word.match(regex)) {
-//       words[index] = `<a href=${word}>${word}</a>`;
-//     }
-//     console.log(words[index]);
-//   });
-
-//   newArray = tWords.join('<br>');
-
-//   return newArray;
-// }
-
 function insertHREF(text) {
   let newLinesArray = [];
-
-  // const exp1 = "(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"
-
-  // const exp2 = /(http|https)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/
 
   const exp3 =
     /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
@@ -49,15 +23,12 @@ function insertHREF(text) {
     const words = line.split(' ');
 
     words.forEach(function (word, index) {
-      // console.log(word)
-
       if (word.match(regex)) {
         words[
           index
         ] = `<a href=${word}  target="_blank" rel="noopener noreferrer">${word}</a>`;
         console.log(`<a href=${word}>${word}</a>`);
       }
-      // console.log(words[index]);
     });
 
     const newLine = words.join(' ');
@@ -133,10 +104,6 @@ exports.getAllTodos = async (req, res) => {
       el.description = insertHREF(newDesc);
     });
 
-    // const updatedDesc = insertHREF(newDesc);
-
-    // console.log(updatedDesc);
-
     console.log(Todos);
 
     res
@@ -161,10 +128,7 @@ exports.getTodo = async (req, res) => {
     customersArray.unshift({ customer: todo.customer });
 
     console.log(customersArray);
-    // res.status(200).json({
-    //   status: 'success',
-    //   data: todo,
-    // });
+
     console.log(todo);
 
     res.render('createEditTodo', {
@@ -205,7 +169,7 @@ exports.createTodo = async (req, res) => {
 
 exports.updateTodo = async (req, res) => {
   console.log(req.body);
-  // console.log(req.params.id);
+
   try {
     const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
