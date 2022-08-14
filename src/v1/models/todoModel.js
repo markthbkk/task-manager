@@ -11,6 +11,14 @@ const todoSchema = new mongoose.Schema(
       maxLength: [50, 'Title cannot exceed 50 characters'],
       minLength: [5, 'Title must be at least 5 characters'],
     },
+    nickname: {
+      type: String,
+      required: true,
+      unique: false,
+      trim: true,
+      maxLength: [25, 'Email nickname cannot exceed 25 characters'],
+      minLength: [3, 'Email nickname must be at least 3 characters'],
+    },
     customer: {
       type: String,
       required: true,

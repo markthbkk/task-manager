@@ -46,6 +46,16 @@ function insertHREF(text) {
 exports.getAllTodos = async (req, res) => {
   console.log('Getting Requested Todos');
 
+  console.log(req.oidc.user);
+  console.log(req.oidc.isAuthenticated());
+
+  let queryObj = {};
+
+  if (req.oidc.isAuthenticated()) {
+    const nickname = req.oidc.user.nickname;
+    let queryObj = { nickname: nickname };
+  }
+
   try {
     let skip = req.query.skip;
     let limit = req.query.limit;
@@ -53,9 +63,9 @@ exports.getAllTodos = async (req, res) => {
     let status = req.query.status;
     let sort = req.query.sort;
 
-    console.log(status);
+    // console.log(status);
 
-    let queryObj = {};
+    // let queryObj = { nickname: nickname };
 
     if (!skip) {
       skip = 0;
@@ -150,6 +160,10 @@ exports.getTodo = async (req, res) => {
 exports.createTodo = async (req, res) => {
   try {
     req.body.status = 'Open';
+
+    const nickname = req.oidc.user.nickname;
+
+    req.body.nickname = nickname;
 
     const newTodo = await Todo.create(req.body);
 

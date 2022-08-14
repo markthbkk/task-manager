@@ -64,6 +64,20 @@ nav {
   margin-inline: 1vw;
 }
 
+.logout {
+  padding-inline: 0.5vh;
+  border: 1px solid #fff;
+  border-radius: 10%;
+  height: 4vh;
+  line-height: 4vh;
+  margin-inline: 2vh;
+}
+
+.logout a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .form-field label {
   /* display: inline-block; */
   width: 10rem;
