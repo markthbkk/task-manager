@@ -53,8 +53,11 @@ exports.getAllTodos = async (req, res) => {
 
   if (req.oidc.isAuthenticated()) {
     const nickname = req.oidc.user.nickname;
-    let queryObj = { nickname: nickname };
+    queryObj = { nickname: nickname };
   }
+
+  console.log('QueryObject');
+  console.log(queryObj.nickname);
 
   try {
     let skip = req.query.skip;
@@ -124,6 +127,17 @@ exports.getAllTodos = async (req, res) => {
       status: 'fail',
       message: err,
     });
+  }
+};
+
+exports.callback = async (req, res) => {
+  console.log('Sent here by Auth) after authentication');
+
+  console.log(req.oidc.user);
+  console.log(req.oidc.isAuthenticated());
+
+  if (req.oidc.isAuthenticated()) {
+    res.redirect('/api/v1/todos');
   }
 };
 

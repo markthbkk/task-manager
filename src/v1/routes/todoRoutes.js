@@ -9,6 +9,10 @@ router
   .post(todoController.createTodo);
 
 router
+  .route('/callback')
+  .get(todoController.callback);
+
+router
   .route('/add')
   .get(todoController.createTodoTemplate)
   .post(todoController.createTodo);
