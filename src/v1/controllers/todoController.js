@@ -136,6 +136,8 @@ exports.callback = async (req, res) => {
   console.log(req.oidc.user);
   console.log(req.oidc.isAuthenticated());
 
+  res.send(req.oidc.isAuthenticated());
+
   if (req.oidc.isAuthenticated()) {
     res.redirect('https://task-manager-mt.herokuapp.com/api/v1/todos');
   }
