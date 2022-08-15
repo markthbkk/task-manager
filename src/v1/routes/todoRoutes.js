@@ -10,7 +10,7 @@ router
 
 router
   .route('/callback')
-  .get(todoController.callback);
+  .post(todoController.callback);
 
 router
   .route('/add')
