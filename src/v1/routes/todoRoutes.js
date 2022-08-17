@@ -5,12 +5,10 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(todoController.getAllTodos)
+  .get(requiresAuth(), todoController.getAllTodos)
   .post(todoController.createTodo);
 
-router
-  .route('/callback')
-  .post(todoController.callback);
+router.route('/callback').post(todoController.callback);
 
 router
   .route('/add')

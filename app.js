@@ -14,7 +14,7 @@ const Handlebars = require('handlebars');
 dotenv.config({ path: './config.env' });
 
 const config = {
-  authRequired: true,
+  authRequired: false,
   auth0Logout: true,
   secret: process.env.SECRET,
   baseURL: process.env.BASEURL,
