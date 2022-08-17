@@ -2,6 +2,7 @@ const express = require('express');
 const todoController = require('../controllers/todoController');
 const customerController = require('../controllers/customerController');
 const router = express.Router();
+const { requiresAuth } = require('express-openid-connect');
 
 router
   .route('/')
