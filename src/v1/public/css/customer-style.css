@@ -74,7 +74,6 @@ nav span {
   margin: 1vh 1vh;
   height: min(4vh, 30rem);
   line-height: min(2vh, 30rem);
-  
 }
 
 .add-customer-btn {
@@ -84,7 +83,7 @@ nav span {
   text-align: center;
   text-decoration: none;
   /* display: inline-block; */
-  font-size: max(0.8rem, 2vh);
+  font-size: max(0.8rem, 1.8vh);
   margin: 3vh 1vw;
   border: white 1px solid;
   height: 6vh;
