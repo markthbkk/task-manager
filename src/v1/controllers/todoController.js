@@ -130,18 +130,18 @@ exports.getAllTodos = async (req, res) => {
   }
 };
 
-// exports.callback = async (req, res) => {
-//   console.log('Sent here by Auth0 after authentication');
+exports.callback = async (req, res) => {
+  console.log('Sent here by Auth0 after authentication');
 
-//   // console.log(req.oidc.user);
-//   console.log(req.oidc.isAuthenticated());
+  console.log(req.oidc.user);
+  console.log(req.oidc.isAuthenticated());
 
-//   // res.send(req.oidc.isAuthenticated());
+  // res.send(req.oidc.isAuthenticated());
 
-//   // if (req.oidc.isAuthenticated()) {
-//   res.redirect('https://task-manager-mt.herokuapp.com/api/v1/todos');
-//   // }
-// };
+  // if (req.oidc.isAuthenticated()) {
+  res.redirect('https://task-manager-mt.herokuapp.com/api/v1/todos');
+  // }
+};
 
 exports.getTodo = async (req, res) => {
   try {
