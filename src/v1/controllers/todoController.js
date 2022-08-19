@@ -138,9 +138,9 @@ exports.callback = async (req, res) => {
 
   // res.send(req.oidc.isAuthenticated());
 
-  if (req.oidc.isAuthenticated()) {
-    res.redirect('https://task-manager-mt.herokuapp.com/api/v1/todos');
-  }
+  // if (req.oidc.isAuthenticated()) {
+  res.redirect('https://task-manager-mt.herokuapp.com/api/v1/todos');
+  // }
 };
 
 exports.getTodo = async (req, res) => {
