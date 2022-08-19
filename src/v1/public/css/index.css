@@ -60,7 +60,6 @@
   text-align: center;
 }
 
-.logintext,
 .entertext {
   border: 1px solid #fff;
   border-radius: 5px;
@@ -71,7 +70,6 @@
   padding-bottom: 5vh;
 }
 
-.login a,
 .entertext a {
   color: #fff;
   text-decoration: none;
