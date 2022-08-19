@@ -134,7 +134,7 @@ exports.callback = async (req, res) => {
   console.log('Sent here by Auth0 after authentication');
 
   // console.log(req.oidc.user);
-  console.log(isAuthenticated);
+  console.log(req.oidc.isAuthenticated());
 
   // res.send(req.oidc.isAuthenticated());
 

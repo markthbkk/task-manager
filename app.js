@@ -52,7 +52,7 @@ app.use(express.static(`${__dirname}/src/v1/public`));
 app.use(auth(config));
 // app.set('trust proxy', 1);
 app.use((req, res, next) => {
-  res.locals.isAuthenticated = req.oidc.isAuthenticated();
+  // res.locals.isAuthenticated = req.oidc.isAuthenticated();
   req.requestTime = new Date().toISOString();
   next();
 });
