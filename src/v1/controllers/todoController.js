@@ -131,7 +131,7 @@ exports.getAllTodos = async (req, res) => {
 };
 
 exports.callback = async (req, res) => {
-  console.log('Sent here by Auth) after authentication');
+  console.log('Sent here by Auth0 after authentication');
 
   console.log(req.oidc.user);
   console.log(req.oidc.isAuthenticated());
