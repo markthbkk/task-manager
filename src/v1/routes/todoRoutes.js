@@ -7,28 +7,32 @@ const { requiresAuth } = require('express-openid-connect');
 router
   .route('/')
   .get(requiresAuth(), todoController.getAllTodos)
-  .post(todoController.createTodo);
+  .post(requiresAuth(), todoController.createTodo);
 
 router.route('/callback').post(todoController.callback);
 
 router
   .route('/add')
-  .get(todoController.createTodoTemplate)
-  .post(todoController.createTodo);
+  .get(requiresAuth(), todoController.createTodoTemplate)
+  .post(requiresAuth(), todoController.createTodo);
 
 router
   .route('/customers')
-  .get(customerController.getAllCustomers)
-  .post(customerController.createCustomer);
+  .get(requiresAuth(), customerController.getAllCustomers)
+  .post(requiresAuth(), customerController.createCustomer);
 
-router.route('/customers/add').get(customerController.addCustomer);
+router
+  .route('/customers/add')
+  .get(requiresAuth(), customerController.addCustomer);
 
-router.route('/customers/:id').delete(customerController.deleteCustomer);
+router
+  .route('/customers/:id')
+  .delete(requiresAuth(), customerController.deleteCustomer);
 
 router
   .route('/:id')
-  .get(todoController.getTodo)
-  .post(todoController.updateTodo)
-  .delete(todoController.deleteTodo);
+  .get(requiresAuth(), todoController.getTodo)
+  .post(requiresAuth(), todoController.updateTodo)
+  .delete(requiresAuth(), todoController.deleteTodo);
 
 module.exports = router;

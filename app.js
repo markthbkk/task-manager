@@ -57,6 +57,7 @@ app.use((req, res, next) => {
 });
 
 // 2) ROUTES
+// app.get('/', index.html);
 app.use('/api/v1/todos', todoRouter);
 
 module.exports = app;
