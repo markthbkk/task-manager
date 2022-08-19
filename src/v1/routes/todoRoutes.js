@@ -9,7 +9,7 @@ router
   .get(requiresAuth(), todoController.getAllTodos)
   .post(requiresAuth(), todoController.createTodo);
 
-router.route('/callback').post(requiresAuth(), todoController.callback);
+router.route('/callback').post(todoController.callback);
 
 router
   .route('/add')
