@@ -70,8 +70,13 @@
   padding-bottom: 5vh;
 }
 
+.entertext:hover {
+background-color: rgb(24, 26, 25);
+
+}
+
 .entertext a {
-  color: #fff;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   height: 5vh;
   line-height: 5vh;
