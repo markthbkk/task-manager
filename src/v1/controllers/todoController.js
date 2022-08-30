@@ -92,7 +92,7 @@ exports.getAllTodos = async (req, res) => {
     }
 
     if (status == 'All') {
-      queryObj = {};
+      queryObj = { nickname: nickname };
     }
 
     if (customer) {
