@@ -115,6 +115,7 @@ exports.getAllTodos = async (req, res) => {
     Todos.forEach((el) => {
       console.log(`OLD ${el}`)
       const newDesc = el.description.replaceAll("\r\n", "<br>");
+      console.log(newDesc);
       el.description = newDesc;
       el.description = insertHREF(newDesc);
       console.log(`NEW ${el}`);
