@@ -26,7 +26,7 @@ function insertHREF(text) {
       if (word.match(regex)) {
         words[
           index
-        ] = `<a href=${word}  target="_blank" rel="noopener noreferrer">${word}</a>`;
+        ] = `<a href="${word}"  target="_blank" rel="noopener noreferrer">${word}</a>`;
         console.log(`<a href=${word}>${word}</a>`);
       }
     });
