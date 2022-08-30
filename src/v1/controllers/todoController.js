@@ -95,7 +95,7 @@ exports.getAllTodos = async (req, res) => {
       queryObj.nickname = nickname };
 
       console.log(`SHOW ALL: ${queryObj}`);
-    }
+    
 
     if (customer) {
       queryObj['customer'] = customer;
