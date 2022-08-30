@@ -110,12 +110,11 @@ exports.getAllTodos = async (req, res) => {
 
     Todos.forEach(formatCreatedTimestamp);
 
-    console.log(`About to edit DESC attribs`)
+    console.log(`About to edit DESC attribs`);
 
     Todos.forEach((el) => {
-      const newDesc = el.description
-        .replaceAll('\r\n', '<br>')
-         el.description = insertHREF(newDesc);
+      // const newDesc = el.description.replaceAll('\r\n', '<br>');
+      el.description = insertHREF(newDesc);
       console.log(newDesc);
     });
 
