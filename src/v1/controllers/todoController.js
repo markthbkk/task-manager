@@ -113,21 +113,21 @@ exports.getAllTodos = async (req, res) => {
 
     Todos.forEach(formatCreatedTimestamp);
 
-    console.log(`About to edit DESC attribs`);
+    // console.log(`About to edit DESC attribs`);
 
-    Todos.forEach((el) => {
-      console.log(`OLD ${el}`)
-      // let newDesc = el.description.replaceAll("\r\n", "<BR>");
-      // console.log(newDesc);
-      // el.description = newDesc;
-      // el.description = insertHREF(el.description);
-      el.description = el.description.replace(
-    /((http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?)/g,
-    '<a href="$1">$1</a>')
-      console.log(`NEW ${el}`);
-    });
+    // Todos.forEach((el) => {
+    //   console.log(`OLD ${el}`)
+    //   let newDesc = el.description.replaceAll("\r\n", "<BR>");
+    //   console.log(newDesc);
+    //   el.description = newDesc;
+    //   el.description = insertHREF(el.description);
+    //   el.description = el.description.replace(
+    // /((http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?)/g,
+    // '<a href="$1">$1</a>')
+    //   console.log(`NEW ${el}`);
+    // });
 
-    console.log(`DATA to render: ${Todos}`);
+    // console.log(`DATA to render: ${Todos}`);
 
     res
       .status(200)

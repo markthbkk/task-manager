@@ -36,8 +36,13 @@ const hbs = exphbs.create({
 hbs.handlebars.registerHelper('breaklines', function (text) {
   text = Handlebars.Utils.escapeExpression(text);
   text = text.replace(/(\r\n|\n|\r)/gm, '<br>');
+  text = text.replace(
+    /((http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?)/g,
+    '<a href="$1">$1</a>')
   return new Handlebars.SafeString(text);
 });
+
+
 
 const app = express();
 
