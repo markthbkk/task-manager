@@ -92,7 +92,7 @@ exports.getAllTodos = async (req, res) => {
     }
 
     if (status == 'All') {
-      queryObj = { nickname: nickname };
+      queryObj.nickname = nickname };
 
       console.log(`SHOW ALL: ${queryObj}`);
     }
