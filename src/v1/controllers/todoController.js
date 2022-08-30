@@ -93,12 +93,15 @@ exports.getAllTodos = async (req, res) => {
 
     if (status == 'All') {
       queryObj = { nickname: nickname };
+
+      console.log(`SHOW ALL: ${queryObj}`);
     }
 
     if (customer) {
       queryObj['customer'] = customer;
     }
 
+    console.log("Final QO")
     console.log(queryObj);
     // Process the query with pagination and sort options set to defaults if not defined by client
 
