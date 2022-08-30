@@ -27,7 +27,7 @@ function insertHREF(text) {
         words[
           index
         ] = `<a href="${word}"  target="_blank" rel="noopener noreferrer">${word}</a>`;
-        console.log(`<a href=${word}>${word}</a>`);
+        // console.log(`<a href=${word}>${word}</a>`);
       }
     });
 
