@@ -87,14 +87,14 @@ exports.getAllTodos = async (req, res) => {
 
     // Filter options
 
-    if (status) {
+    if (status === 'Open' || status === 'Completed' || status === 'Closed') {
       queryObj['status'] = status;
     }
 
-    if (status == 'All') {
-      queryObj.nickname = nickname };
+    // if (status == 'All') {
+    //   queryObj.nickname = nickname };
 
-      console.log(`SHOW ALL: ${queryObj}`);
+    //   console.log(`SHOW ALL: ${queryObj}`);
     
 
     if (customer) {
