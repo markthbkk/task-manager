@@ -114,8 +114,8 @@ exports.getAllTodos = async (req, res) => {
 
     Todos.forEach((el) => {
       // const newDesc = el.description.replaceAll('\r\n', '<br>');
-      el.description = insertHREF(newDesc);
-      console.log(newDesc);
+      el.description = insertHREF(el);
+      console.log(el);
     });
 
     console.log(`DATA to render: ${Todos}`);
