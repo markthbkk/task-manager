@@ -216,15 +216,15 @@ exports.updateTodo = async (req, res) => {
 
     // console.log(newDesc);
 
-    const updatedDesc = insertHREF(newDesc);
+    // const updatedDesc = insertHREF(newDesc);
 
-    console.log(updatedDesc);
+    // console.log(updatedDesc);
 
     res.render('showSingleTodo', {
       layout: 'main',
       title: todo.title,
       customer: todo.customer,
-      description: updatedDesc,
+      description: todo.description,
       created: new Date(todo.created).toLocaleString().replace(',', ''),
       documentID: todo._id,
     });
