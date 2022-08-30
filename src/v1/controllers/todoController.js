@@ -110,6 +110,8 @@ exports.getAllTodos = async (req, res) => {
 
     Todos.forEach(formatCreatedTimestamp);
 
+    console.log(`About to edit DESC attribs`)
+
     Todos.forEach((el) => {
       const newDesc = el.description
         .replaceAll('\r\n\r\n', '<br>')
