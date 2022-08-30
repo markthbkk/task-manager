@@ -11,10 +11,11 @@
   "author": "Mark Thomas",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.18.1",
     "@handlebars/allow-prototype-access": "^1.0.5",
     "dotenv": "^16.0.1",
     "express-csp-header": "^5.1.0",
-    "express-handlebars": "^6.0.6",
+    "express-handlebars": "6.0.6",
     "express-openid-connect": "^2.8.0",
     "handlebars": "^4.7.7",
     "json-stringify": "^1.0.0",
@@ -26,7 +27,6 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
-    "express": "^4.18.1",
     "nodemon": "^2.0.16"
   }
 }

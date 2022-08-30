@@ -115,9 +115,10 @@ exports.getAllTodos = async (req, res) => {
         .replaceAll('\r\n\r\n', '<br>')
         .replaceAll('\r\n', '<br>');
       el.description = insertHREF(newDesc);
+      console.log(newDesc);
     });
 
-    console.log(Todos);
+    console.log(`DATA to render: ${Todos}`);
 
     res
       .status(200)
